@@ -1,0 +1,20 @@
+# Render Blueprint: New > Blueprint in the Render dashboard, pick this repo.
+services:
+  - type: web
+    name: ngo-suite
+    runtime: docker
+    rootDir: ngo-suite
+    dockerfilePath: ./Dockerfile
+    plan: starter            # a persistent disk needs a paid plan; free instances lose all data on every restart
+    healthCheckPath: /
+    envVars:
+      - key: NGO_ADMIN_PASSWORD
+        sync: false          # Render asks for this on first deploy
+      - key: NGO_DB
+        value: /data/ngo.db
+      - key: NGO_FORCE_SECURE
+        value: "1"
+    disk:
+      name: ngo-data
+      mountPath: /data
+      sizeGB: 1
