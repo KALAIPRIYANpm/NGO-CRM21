@@ -1,0 +1,15 @@
+# For a Linux server without Docker. Copy to /etc/systemd/system/, then: systemctl enable --now ngo-suite
+[Unit]
+Description=NGO Suite
+After=network.target
+
+[Service]
+User=ngo
+WorkingDirectory=/opt/ngo-suite
+Environment=NGO_DB=/var/lib/ngo-suite/ngo.db
+Environment=NGO_ADMIN_PASSWORD=choose-a-long-first-password
+ExecStart=/usr/bin/python3 /opt/ngo-suite/run.py --host 127.0.0.1 --port 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

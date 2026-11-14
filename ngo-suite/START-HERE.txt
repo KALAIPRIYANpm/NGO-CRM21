@@ -1,0 +1,49 @@
+SEE SAMPLE DATA ON EVERY PAGE (start here)
+  Windows: double-click START-DEMO-WINDOWS.bat, then open http://127.0.0.1:8021
+  Mac/Linux: run ./start-demo.sh
+  Sign in: admin / ChangeMe123.  Your real data is never touched; sample data lives in data/demo.db (delete it to reset).
+  If the screen looks old, press Ctrl+F5 in the browser once.
+  START-WINDOWS.bat is for your real data (port 8020); it shows a first-time admin password.
+
+NGO SUITE - HOW TO START AND SIGN IN
+====================================
+
+1. Unzip this file into a NEW folder (do not unzip over an old copy).
+   Close any old NGO Suite black windows first.
+
+2. Double-click  START-WINDOWS.bat
+   (Mac/Linux: open a terminal in this folder and run:  python3 run.py --port 8020)
+   Keep the black window open while you use the software.
+
+3. Open your browser and go to:   http://127.0.0.1:8020
+
+4. Sign in:
+      Username: admin        Password: ChangeMe123
+   Other demo users (same password ChangeMe123):
+      accounts  (accounts and fundraising)
+      field     (field work)
+      viewer    (view only)
+
+   This folder already contains sample data for "Seva Sankalp Trust".
+   After you sign in, open Admin > Branding & setup to put your own name and logo. Look for "Communicate > Broadcast" and "Automations" in the left menu to check this is the new version.
+
+NEW in v8 (look for the orange NEW tags in the left menu; click a group name such as Communicate or Fundraising to open it):
+   Fundraising > Giving promises, Donors slipping away, Find duplicates
+   Programmes > Journey (timeline for every person served)
+   Reports > Funder report (CSR)      Overview > Weekly summary
+   Admin > Backup & restore (password-protected backups) and Audit trail (searchable)
+   Phone app: language chooser (Hindi, Marathi, Tamil, Telugu, Bengali, Gujarati, Kannada) and it now opens with no signal after one sign-in.
+NEW in v7: Communicate > Inbox (replies from donors) and automatic STOP handling.
+NEW in v6: Reports > Impact cards (a share link for donors) and Accounts > Audit and 80G pack.
+NEW in v5: open Overview > Field app (phone) for photo/video capture and expense claims. Use the Security button (top right) to turn on two-step sign-in. Read README.md and docs/HTTPS.md before using it over the internet.
+
+If login fails: close the black window, run   py reset_admin.py   then START-WINDOWS.bat again.
+After 5 wrong tries, wait 5 minutes.
+
+Use your own data: ask for the clean-start steps, or change Settings and delete sample records.
+
+NEW in v9
+  Fundraising: Company partners, Office events, Key relationships
+  Grants: Expected payments (funder payments due)
+  Planning: Cash forecast, Board pack, Board decisions
+  Settings: Money planning (monthly cost, reserve months, major-donor line)
