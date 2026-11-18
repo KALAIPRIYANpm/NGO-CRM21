@@ -1,20 +1,23 @@
 # Render Blueprint: New > Blueprint in the Render dashboard, pick this repo.
+# FREE TIER (testing only): no persistent disk, so ALL data (database, photos, backups)
+# is wiped whenever the service restarts, redeploys, or spins down after ~15 min idle.
+# For real use: set plan: starter and add back the disk block below.
 services:
   - type: web
     name: ngo-suite
     runtime: docker
     rootDir: ngo-suite
     dockerfilePath: ./Dockerfile
-    plan: starter            # a persistent disk needs a paid plan; free instances lose all data on every restart
+    plan: free
     healthCheckPath: /
     envVars:
       - key: NGO_ADMIN_PASSWORD
-        sync: false          # Render asks for this on first deploy
+        sync: false          # Render asks for this on first deploy; admin is re-created with it after each reset
       - key: NGO_DB
         value: /data/ngo.db
       - key: NGO_FORCE_SECURE
         value: "1"
-    disk:
-      name: ngo-data
-      mountPath: /data
-      sizeGB: 1
+    # disk:                  # paid plans only
+    #   name: ngo-data
+    #   mountPath: /data
+    #   sizeGB: 1
